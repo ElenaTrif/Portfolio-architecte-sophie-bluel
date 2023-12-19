@@ -1,6 +1,8 @@
 /********Variables*******/
 const gallery = document.querySelector(".gallery");
 const portfolio = document.getElementById("portfolio");
+
+// Création de la div qui contient nos boutons
 const categoryMenu = document.createElement("div");
     categoryMenu.classList.add("category-menu");
     portfolio.appendChild(categoryMenu);
@@ -8,7 +10,7 @@ const categoryMenu = document.createElement("div");
     console.log(categoryMenu)
 
 
-// (1)Fonction pour récupérer les traveaux depuis l'API
+// Fonction pour récupérer les traveaux depuis l'API
 async function fetchWorks() {
     const reponse = await fetch("http://localhost:5678/api/works");
     return await reponse.json();
@@ -17,7 +19,7 @@ fetchWorks();
 
 
 
-// (2)Fonction pour récupérer les catégories depuis l'API
+// Fonction pour récupérer les catégories depuis l'API
 async function fetchCategories() {
     const response = await fetch("http://localhost:5678/api/categories");
     return await response.json();
@@ -29,12 +31,14 @@ fetchCategories()
 async function displayCategories() {
     const categories = await fetchCategories();
     const categoryMenu = document.querySelector(".category-menu");
-
+    
+    // Création du bouton "Tous"
     const allOption = document.createElement("button");
     allOption.textContent = "Tous";
     allOption.addEventListener("click", () => filterWorks());
     categoryMenu.appendChild(allOption);
 
+    // Création des boutons selon le nombre de catégories
     categories.forEach((category) => {
         const categoryItem = document.createElement("button");
         categoryItem.textContent = category.name;
@@ -85,8 +89,3 @@ document.addEventListener("DOMContentLoaded", () => {
     displayCategories();
     displayWorks(); // Afficher tous les travaux par défaut
 });
-
-
-
-
-

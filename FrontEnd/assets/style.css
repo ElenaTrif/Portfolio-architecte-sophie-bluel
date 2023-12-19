@@ -140,6 +140,7 @@ body {
 	margin: auto;
 	font-family: 'Work Sans';
 	font-size: 14px;
+	background-color: #FFFEF8
 }
 
 header {
@@ -185,6 +186,11 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+}
+
+li a {
+	text-decoration: none;
+	color: #000000;
 }
 
 li:hover {
@@ -287,7 +293,14 @@ input[type="submit"] {
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em;
+	padding-top: 1.5em;
+}
+
+footer {
+	height: 60px;
+	background-color: white;
+
 }
 
 /**********Boutons**********/
@@ -324,3 +337,22 @@ button:active {
 	transform: scale(1.1);
 	cursor: pointer;
 }
+
+
+/**********Login**********/
+
+.passwordForget {
+	display: flex;
+	justify-content: center;
+	color: #3D3D3D;
+}
+
+.submit:hover {
+	cursor: pointer;
+	background-color: #0E2F28;
+}
+
+.lienLogin {
+	font-weight: 600;
+}
+
