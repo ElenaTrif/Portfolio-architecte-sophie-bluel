@@ -12,8 +12,8 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer">
 	<script src="script.js" defer></script>
 </head>
 
@@ -41,12 +41,30 @@
 				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
 					couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du
 					chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-				<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG,
-					décorateur(trice)</p>
+				<p>En cas de besoin, une équipe pluridisciplinaire peut être constituée : architecte DPLG,
+					décorateur(trice).</p>
 			</article>
 		</section>
 		<section id="portfolio">
 			<h2 class="projetsModifier">Mes Projets</h2>
+
+
+			<div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal1">
+				<section class="modal-1">
+					<span><i class="fa-solid fa-xmark"></i></span>
+					<h3 id="titlemodal1">Galerie Photo</h3>
+					<div class="container-gallery">
+						<div class="modalGallery">
+						</div>
+						<hr>
+						<div class="ButtonPhoto">
+							<button id="addPhotoBtn">Ajouter une photo</button>
+						</div>
+					</div>
+				</section>
+			</div>
+
+
 			<div class="gallery">
 				<figure>
 					<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
