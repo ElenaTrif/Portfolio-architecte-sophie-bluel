@@ -37,6 +37,7 @@ form.addEventListener("submit", function (event) {
           throw new Error("E-mail et/ou mot de passe incorrect(s).");
         }
         return response.json(); // Si la requête réussit, renvoie la réponse au format JSON
+        
       })
       .then((data) => {
       // Traitement des données JSON
