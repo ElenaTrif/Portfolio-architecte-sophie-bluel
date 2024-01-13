@@ -32,9 +32,9 @@ form.addEventListener("submit", function (event) {
       // Vérification de la réussite de la requête
         if (!response.ok) {
             // Si la requête échoue, affichage d'un message d'erreur et arrêt du traitement
-          loginFailed.textContent = "E-mail et/ou mot de passe incorrect(s).";
+          loginFailed.textContent = "Erreur dans l'identifiant ou le mot de passe";
           loginFailed.style.color = "#FF0000";
-          throw new Error("E-mail et/ou mot de passe incorrect(s).");
+          throw new Error("Erreur dans l'identifiant ou le mot de passe");
         }
         return response.json(); // Si la requête réussit, renvoie la réponse au format JSON
         

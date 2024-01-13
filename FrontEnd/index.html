@@ -49,7 +49,7 @@
 			<h2 class="projetsModifier">Mes Projets</h2>
 
 
-			<div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal1">
+			<div id="modal" class="modal" aria-hidden="true" role="dialog">
 				<section class="modal-1">
 					<span><i class="fa-solid fa-xmark"></i></span>
 					<h3 id="titlemodal1">Galerie Photo</h3>
@@ -61,6 +61,29 @@
 							<button id="addPhotoBtn">Ajouter une photo</button>
 						</div>
 					</div>
+				</section>
+
+				<section class="modal-2">
+					<span class="arrow-left"><i class="fa-solid fa-arrow-left"></i></span>
+					<span class="xmark"><i class="fa-solid fa-xmark"></i></span>
+					<h3>Ajout photo</h3>
+					<form id="formAjouterPhoto">
+						<div class="containerAjouterPhoto">
+							<i class="fa-regular fa-image"></i>
+							<label for="file" class="labelFile">+ Ajouter photo</label>
+							<p>jpg,png : 4mo max</p>
+							<input type="file" name="image" id="file" accept="image/jpg, image/png" required>
+							<img id="previewImage" src="#" alt="Aperçu de l'image">
+						</div>
+						<label for="title">Titre</label>
+						<input type="text" name="title" id="title" required>
+						<label for="categoryInput">Catégorie</label>
+						<select id="categoryInput" name="category" required>
+						</select>
+						<div class="containerBoutonValider">
+							<button type="submit" class="boutonValider">Valider</button>
+						</div>
+					</form>
 				</section>
 			</div>
 
