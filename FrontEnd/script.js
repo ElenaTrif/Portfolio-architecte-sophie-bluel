@@ -10,7 +10,6 @@ portfolio.appendChild(categoryMenu);
 categoryMenu.after(gallery);
 
 
-
 // Fonction pour récupérer les travaux depuis l'API
 async function fetchWorks() {
     const reponse = await fetch("http://localhost:5678/api/works");
@@ -72,10 +71,12 @@ async function displayWorks(categoryId) {
     });
 }
 
+
 // Fonction de filtrage des travaux par catégorie
 function filterWorks(categoryId) {
     displayWorks(categoryId);
 }
+
 
 // Vérifier si l'utilisateur est connecté
 const userToken = window.sessionStorage.getItem("token");
@@ -135,8 +136,6 @@ if (userToken) {
 
     // Modifier le style du curseur pour le bouton "logout"
     logoutButton.style.cursor = "pointer";
-
-
 }
 
 // Ajouter l'écouteur d'événement click sur le bouton "logout"
@@ -155,7 +154,6 @@ displayWorks(); // Afficher tous les travaux par défaut
 
 
 
-
 // L'ouverture et la fermeture de la fenêtre modale
 
 // Sélection des éléments du DOM pour les modaux
@@ -165,10 +163,10 @@ const closeModal1 = document.querySelector(".fa-xmark");
 const closeModal2 = document.querySelector(".modal-2 span .fa-xmark");
 
 
-const modal1 = document.querySelector('.modal-1');
-const modal2 = document.querySelector('.modal-2');
-const addPhotoBtn = document.getElementById('addPhotoBtn');
-const arrowLeftIcon = document.querySelector('.modal-2 .arrow-left');
+const modal1 = document.querySelector(".modal-1");
+const modal2 = document.querySelector(".modal-2");
+const addPhotoBtn = document.getElementById("addPhotoBtn");
+const arrowLeftIcon = document.querySelector(".modal-2 .arrow-left");
 
 // Gestionnaire d'événement pour ouvrir la modale
 modifier.addEventListener("click", () => {
@@ -223,6 +221,7 @@ async function displayWorksModal() {
 
 displayWorksModal()
 
+// Fonction pour supprimer les travaux
 function deleteWorks() {
     // Sélection de tous les éléments du DOM avec la classe "fa-trash-can"
     const trashAll = document.querySelectorAll(".fa-trash-can");
@@ -272,30 +271,25 @@ function deleteWorks() {
 
 // Fonction pour afficher le modal-2 et masquer le modal-1
 function showAddPhotoModal() {
-    modal1.style.display = 'none';
-    modal2.style.display = 'block';
-    modal1.classList.add('hidden');
-    modal2.classList.remove('hidden');
+    modal1.style.display = "none";
+    modal2.style.display = "block";
+    modal1.classList.add("hidden");
+    modal2.classList.remove("hidden");
 }
 
 // Fonction pour afficher le modal-1 et masquer le modal-2
 function showGalleryModal() {
-    modal1.style.display = 'block';
-    modal2.style.display = 'none';
-    modal1.classList.remove('hidden');
-    modal2.classList.add('hidden');
+    modal1.style.display = "block";
+    modal2.style.display = "none";
+    modal1.classList.remove("hidden");
+    modal2.classList.add("hidden");
 }
 
 // Ajoutez un écouteur d'événements au bouton "Ajouter une photo"
-addPhotoBtn.addEventListener('click', showAddPhotoModal);
+addPhotoBtn.addEventListener("click", showAddPhotoModal);
 
 // Ajoutez un écouteur d'événements à l'icône "arrow-left"
-arrowLeftIcon.addEventListener('click', showGalleryModal);
-
-
-
-
-
+arrowLeftIcon.addEventListener("click", showGalleryModal);
 
 
 // Ajouter un écouteur d'événements au formulaire pour gérer l'ajout de nouveaux projets
@@ -366,7 +360,6 @@ async function loadCategories() {
 }
 
 loadCategories();
-
 
 
 //fonction prévisualisation de l'image
