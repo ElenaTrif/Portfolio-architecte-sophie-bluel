@@ -222,7 +222,7 @@ async function displayWorksModal() {
 displayWorksModal()
 
 // Fonction pour supprimer les travaux
-function deleteWorks() {
+async function deleteWorks() {
     // Sélection de tous les éléments du DOM avec la classe "fa-trash-can"
     const trashAll = document.querySelectorAll(".fa-trash-can");
 
@@ -230,6 +230,7 @@ function deleteWorks() {
     trashAll.forEach((trash) => {
         // Ajout d'un gestionnaire d'événements au clic sur l'icône de corbeille
         trash.addEventListener("click", (e) => {
+          
             // Récupération de l'identifiant unique du travail à supprimer (correspondant à l'ID dans la base de données)
             const trashId = trash.id;
 
@@ -250,7 +251,15 @@ function deleteWorks() {
                         console.log("delete failed !");
                         throw new Error("Delete failed"); // Gestion des erreurs
                     }
-                    return response.json(); // Renvoie la réponse JSON du backend
+
+                    // Vérifier si la réponse est un JSON valide
+                    const contentType = response.headers.get("content-type");
+                    if (contentType && contentType.includes("application/json")) {
+                        return response.json(); // Renvoie la réponse JSON du backend
+                    } else {
+                        return {}; // Retourne un objet vide si la réponse n'est pas JSON
+                    }
+
                 })
                 .then((data) => {
                     console.log("delete success, data :", data);
@@ -259,6 +268,10 @@ function deleteWorks() {
                     const deletedWork = document.getElementById(trashId);
                     if (deletedWork) {
                         deletedWork.remove();
+
+                        displayWorks();
+                        displayWorksModal();
+
                     }
                 })
                 .catch((error) => {
@@ -402,3 +415,4 @@ function verifFormCompleted() {
 }
 
 verifFormCompleted()
+
